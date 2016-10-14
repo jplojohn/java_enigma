@@ -1,0 +1,6 @@
+Implementation of the WWII Enigma Machine.
+See https://en.wikipedia.org/wiki/Enigma_machine
+
+The Plugboards and Rotors files are taken from an Imperial College
+Exercise, the rest is my own.
+
