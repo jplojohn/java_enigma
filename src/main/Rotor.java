@@ -4,23 +4,27 @@ import util.array;
 
 public class Rotor {
 	private int[] map;
-//	private int[] reverseMap;
 	private int position;
-	private boolean rotate;
+	private int rotorNumber;
+	private int incrementCount;
 	
-	public Rotor (int[] map, int startPosition, boolean rotate) {
+	public Rotor (int[] map, int startPosition, int rotorNumber) {
 		this.map = map;
 		this.position = startPosition;
-		//this.reverseMap = array.reverseIntArray(this.map);
+		this.rotorNumber = rotorNumber;
+		this.incrementCount = 0;
 	}
 	
 	private void incrementPosition() {
-		if (this.rotate == false) {
-			return;
-		} else if (this.position == 25) {
-			this.position = 0;
-		} else
-			this.position++;
+		incrementCount++;
+		
+		if (incrementCount % (26^rotorNumber) != 0) {
+			if (position >= 25) {
+				position = 0;
+			} else {
+				position++;
+			}
+		}
 	}
 	
 	public char translateForwards(char c) {
@@ -32,7 +36,10 @@ public class Rotor {
 	public char translateBackwards(char c) {
 		int charPos = alphabet.charToPosition(c);
 		int translatedCharPos = (array.search(map, charPos) + position) % 26;
-		// System.out.println("charPos is: " + charPos + "\nPosition of charPos in reverse is " + array.search(map, charPos) + "\n");
+/*		System.out.println("charPos is: " + charPos + "\nPosition of charPos " +
+				"in reverse is " + array.search(map, charPos) + "\n" +
+				"Position of charPos in reverse + rotor position is: " +
+				array.search(map, charPos - position)); */
 		incrementPosition();
 		return alphabet.positionToChar(translatedCharPos);
 	}

@@ -16,7 +16,6 @@ public class ReflectorTest {
 		assertThat(Reflector.reflect('A'), is('N'));
 		assertThat(Reflector.reflect('B'), is('O'));
 		assertThat(Reflector.reflect('M'), is('Z'));
-
 	}
 	
 	@Test 	//Tests that out of bound characters will throw exceptions, 
