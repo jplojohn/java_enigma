@@ -18,8 +18,20 @@ public class PlugboardTest {
         Plugboard mypb0 = new Plugboard(pb0);
         for (char c = 'A'; c <= 'Z'; c++) {
             assertThat(mypb0.translate(c), is(c));
-
         }
+    }
+
+    @Test
+    public void testPlugboard1() {
+        Plugboard mypb1 = new Plugboard(pb1);
+        for (char c = 'A'; c < 'I'; c++) {
+            assertThat(mypb1.translate(c), is(c));
+        }
+        assertThat(mypb1.translate('I'), is('Z'));
+        for (char c = 'J'; c < 'Z'; c++) {
+            assertThat(mypb1.translate(c), is(c));
+        }
+        assertThat(mypb1.translate('Z'), is('I'));
     }
 
 }
