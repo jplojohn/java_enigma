@@ -34,4 +34,30 @@ public class PlugboardTest {
         assertThat(mypb1.translate('Z'), is('I'));
     }
 
+    @Test
+    public void testPlugboard2() {
+        Plugboard mypb1 = new Plugboard(pb2);
+        for (char c = 'A'; c < 'E'; c++) {
+            assertThat(mypb1.translate(c), is(c));
+        }
+        assertThat(mypb1.translate('E'), is('V'));
+
+        for (char c = 'F'; c < 'J'; c++) {
+            assertThat(mypb1.translate(c), is(c));
+        }
+        assertThat(mypb1.translate('J'), is('W'));
+        assertThat(mypb1.translate('K'), is('Z'));
+
+        for (char c = 'L'; c < 'V'; c++) {
+            assertThat(mypb1.translate(c), is(c));
+        }
+        assertThat(mypb1.translate('V'), is('E'));
+        assertThat(mypb1.translate('W'), is('J'));
+
+        for (char c = 'X'; c < 'Z'; c++) {
+            assertThat(mypb1.translate(c), is(c));
+        }
+        assertThat(mypb1.translate('Z'), is('K'));
+    }
+
 }
