@@ -12,9 +12,9 @@ public class alphabet {
 	 */
 	public static int charToPosition(char c) throws IndexOutOfBoundsException { 
 	//Upper case only!
-	int temp = (int)c;
-	if(temp<=90 && temp>=65) { // Checks the char is in the range A-Z
-		return temp-65;
+
+	if(c <= 'Z' && c >= 'A') { // Checks the char is in the range A-Z
+		return c - 'A';
 	} else {
 		throw new IndexOutOfBoundsException("The specified char is not "
 				+ "in the range A-Z");
@@ -32,7 +32,7 @@ public class alphabet {
 			throw new IndexOutOfBoundsException("The specified int " + i + ", is"
 					+ "not in the range 0-25");
 		}
-		return (char) (i+65);
+		return (char) (i+'A');
 	}
 	
 }
