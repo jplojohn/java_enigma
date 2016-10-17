@@ -55,7 +55,6 @@ class Main {
         BufferedReader fbr = new BufferedReader(fr);
 
         String line = fbr.readLine();
-//        System.out.println(line);
         if (line == null) { // Edge case for identity-mapped plugboard (see null.pb)
             return new int[0];
         }

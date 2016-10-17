@@ -19,7 +19,6 @@ public class Rotor {
         incrementCount++;
 
 		if ((incrementCount % (Math.pow(26,rotorNumber))) == 0) {
-            //System.out.println(" Advancing rotor with map: " + map);
             if (position >= 25) {
 				position = 0;
 				incrementCount = 0;
