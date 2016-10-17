@@ -55,8 +55,8 @@ class EnigmaMachine {
             temp = r.translateForwards(temp);
         }
         temp = Reflector.reflect(temp);
-        for (Rotor r : rotors) {
-            temp = r.translateBackwards(temp);
+        for (int i = rotors.length - 1; i >= 0; i--) {
+            temp = rotors[i].translateBackwards(temp);
         }
         temp = plugboard.translate(temp);
         return temp;
