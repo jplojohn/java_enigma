@@ -19,7 +19,9 @@ class EnigmaMachine {
     private void startMachine() {
         System.out.println("ENIGMA MACHINE\n================\n" +
                 "This machine accept CAPITAL A-Z letters only\n" +
-                "Other letters will result in an exception.\n" +
+                "Other (invalid) characters will print out a dot (.).\n" +
+                "Note that invalid characters will not advance the rotor positions.\n" +
+                "And may leave your encrypted message non-decryptable.\n" +
                 "Enter 'q' to quit the machine at any time.");
         do {
             char c = '0';
@@ -43,6 +45,9 @@ class EnigmaMachine {
         if (c == 'q') {
             System.out.println("Caught exit character, 'q'. Exiting...");
             System.exit(0);
+        }
+        if (c < 'A' || c > 'Z') {
+            return '.';
         }
         char temp = c;
         temp = plugboard.translate(temp);
