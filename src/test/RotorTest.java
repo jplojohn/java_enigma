@@ -30,8 +30,9 @@ public class RotorTest {
 	public void basicBackwardRotorTest() {
 		Rotor myRotor1 = new Rotor(rotor1, 0, 0);
 		assertThat(myRotor1.translateBackwards('A'), is('Z'));
-		assertThat(myRotor1.translateBackwards('F'), is('D'));
-		assertThat(myRotor1.translateBackwards('D'), is('A'));
+		assertThat(myRotor1.translateBackwards('A'), is('Y'));
+		assertThat(myRotor1.translateBackwards('F'), is('C'));
+		assertThat(myRotor1.translateBackwards('D'), is('Z'));
 	}
 
 	@Test

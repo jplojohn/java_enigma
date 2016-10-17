@@ -16,9 +16,12 @@ public class alphabet {
 	if(c <= 'Z' && c >= 'A') { // Checks the char is in the range A-Z
 		return c - 'A';
 	} else {
+		System.out.println("The char given was: " + c);
 		throw new IndexOutOfBoundsException("The specified char is not "
 				+ "in the range A-Z");
-	}}
+
+	}
+	}
 	
 	
 	/*
