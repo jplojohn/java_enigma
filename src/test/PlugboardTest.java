@@ -9,9 +9,9 @@ import static org.hamcrest.core.Is.is;
 public class PlugboardTest {
 
     // Taken from the respective .pb files in ../../plugboards/
-    private int[] pb0 = {};
-    private int[] pb1 = {25,8};
-    private int[] pb2 = {25,10,22,9,21,4};
+    private final int[] pb0 = {};
+    private final int[] pb1 = {25, 8};
+    private final int[] pb2 = {25, 10, 22, 9, 21, 4};
 
     @Test
     public void testEmptyPlugboard() {

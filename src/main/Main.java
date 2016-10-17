@@ -4,7 +4,7 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 
-public class Main {
+class Main {
 
     private static final int ALPHABET_LENGTH = 26;
 

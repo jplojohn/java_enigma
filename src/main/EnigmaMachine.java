@@ -4,8 +4,8 @@ import java.io.IOException;
 
 class EnigmaMachine {
 
-    private Rotor[] rotors;
-    private Plugboard plugboard;
+    private final Rotor[] rotors;
+    private final Plugboard plugboard;
 
     EnigmaMachine(int[][] rotorMaps, int[] plugboardMap) {
         this.rotors = new Rotor[rotorMaps.length];
@@ -20,8 +20,8 @@ class EnigmaMachine {
         System.out.println("ENIGMA MACHINE\n================\n" +
                 "This machine accept CAPITAL A-Z letters only\n" +
                 "Other (invalid) characters will print out a dot (.).\n" +
-                "Note that invalid characters will not advance the rotor positions.\n" +
-                "And may leave your encrypted message non-decryptable.\n" +
+                "Note that invalid characters will not advance the rotor positions,\n" +
+                "and may leave your encrypted message non-decryptable.\n" +
                 "Enter 'q' to quit the machine at any time.");
         do {
             char c = '0';

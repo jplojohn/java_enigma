@@ -3,9 +3,9 @@ import util.alphabet;
 import util.array;
 
 public class Rotor {
-	private int[] map;
-	private int position;
-	private int rotorNumber;
+    private final int[] map;
+    private final int rotorNumber;
+    private int position;
 	private int incrementCount;
 
 	public Rotor (int[] map, int startPosition, int rotorNumber) {
@@ -27,7 +27,7 @@ public class Rotor {
 			}
 
         }
-	}
+    }
 
 	public char translateForwards(char c) {
 		int charPos = alphabet.charToPosition(c);
