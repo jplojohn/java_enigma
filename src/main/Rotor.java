@@ -3,8 +3,11 @@ package main;
 import util.Alphabet;
 import util.Array;
 
+import java.util.Arrays;
+
 import static main.Main.*;
 
+@SuppressWarnings("ALL")
 public class Rotor {
   private final int[] map;
   private final int rotorNumber;
@@ -12,7 +15,9 @@ public class Rotor {
   private int incrementCount;
   
   public Rotor(int[] map, int startPosition, int rotorNumber) {
-    this.map = map;
+    this.map = Arrays.copyOf(map, map.length);
+    
+    
     { // This section checks the validity of the map.
       
       // First check the map is of the correct length (26, the length
@@ -20,15 +25,16 @@ public class Rotor {
       if (map.length != ALPHABET_LENGTH) {
         System.err.println("Error: Rotor number " + rotorNumber + "has an " +
                 "invalid configuration with the number of entries not equal" +
-                "to 26.\n Exiting....");
+                "to" + ALPHABET_LENGTH + "\n Exiting....");
         System.exit(EXIT_HUMAN_ERR);
       }
       
       for (int i : map) {
         // Check that each element in the map is valid (ie between 0 and 25).
         if (i > ALPHABET_LENGTH - 1 || i < 0) {
-          System.err.println("Error: Rotor number " + rotorNumber + " has an invalid" +
-                  "configuration with one or more entries outside of the range 0-25\n" +
+          System.err.println("Error: Rotor number " + rotorNumber + " has an " +
+                  "invalid configuration with one or more entries outside of " +
+                  "the range 0-25\n" +
                   "Exiting...");
           System.exit(EXIT_HUMAN_ERR);
         }
@@ -47,7 +53,8 @@ public class Rotor {
       }
   
     }
-    
+
+    //The actual construction part:
     this.position = startPosition;
     if (this.position < 0 || this.position >= ALPHABET_LENGTH) {
       System.err.println("Error: Rotor number " + rotorNumber + "has start " +
@@ -63,18 +70,17 @@ public class Rotor {
   
   private void incrementPosition() {
     incrementCount++;
-    
-    if ((incrementCount % (Math.pow(26, rotorNumber))) == 0) {
+    if ((incrementCount % (Math.pow(ALPHABET_LENGTH, rotorNumber))) == 0) {
       if (position >= ALPHABET_LENGTH - 1) {
         position = 0;
         incrementCount = 0;
       } else {
         position++;
       }
-      
     }
   }
-  
+
+
   public char translateForwards(char c) {
     int charPos = Alphabet.charToPosition(c);
     int translatedCharPos = map[(charPos + position) % ALPHABET_LENGTH];

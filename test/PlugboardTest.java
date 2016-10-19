@@ -4,6 +4,7 @@ import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
+@SuppressWarnings("NestedMethodCall")
 public class PlugboardTest {
 
     // Taken from the respective .pb files in ../../plugboards/

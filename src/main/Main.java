@@ -5,9 +5,12 @@ import java.nio.charset.Charset;
 import java.util.Arrays;
 
 import static main.EnigmaMachine.helpMessage;
-class Main {
-  
-  static final int ALPHABET_LENGTH = 26;
+
+@SuppressWarnings("ALL")
+public enum Main {
+  ;
+
+  public static final int ALPHABET_LENGTH = 26;
   
   // Various Error Codes
   static final int EXIT_NOERR = 0;
@@ -80,6 +83,7 @@ class Main {
     
     String line = fbr.readLine();
     if (line == null) { // Edge case for identity-mapped plugboard (see null.pb)
+      System.out.println("{}");
       return new int[0];
     }
     String[] splitLine = line.split(" ");
