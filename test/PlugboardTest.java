@@ -1,5 +1,3 @@
-package test;
-
 import main.Plugboard;
 import org.junit.Test;
 

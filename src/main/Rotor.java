@@ -1,8 +1,7 @@
 package main;
 
-import org.apache.commons.lang3.ArrayUtils;
-import util.alphabet;
-import util.array;
+import util.Alphabet;
+import util.Array;
 
 import static main.Main.*;
 
@@ -17,7 +16,7 @@ public class Rotor {
     { // This section checks the validity of the map.
       
       // First check the map is of the correct length (26, the length
-      // of the alphabet).
+      // of the Alphabet).
       if (map.length != ALPHABET_LENGTH) {
         System.err.println("Error: Rotor number " + rotorNumber + "has an " +
                 "invalid configuration with the number of entries not equal" +
@@ -38,7 +37,7 @@ public class Rotor {
       // Check that each element in the map appears only once, by verifying
       // that they ALL appear;
       for (int i = 0; i < ALPHABET_LENGTH; i++) {
-        boolean contains = ArrayUtils.contains(map, i);
+        boolean contains = Array.contains(map, i);
         if (!contains) {
           System.err.println("Error: Rotor number " + rotorNumber + "has an" +
                   "invalid configuration, which is either missing or has more" +
@@ -77,16 +76,16 @@ public class Rotor {
   }
   
   public char translateForwards(char c) {
-    int charPos = alphabet.charToPosition(c);
+    int charPos = Alphabet.charToPosition(c);
     int translatedCharPos = map[(charPos + position) % ALPHABET_LENGTH];
-    return alphabet.positionToChar(translatedCharPos);
+    return Alphabet.positionToChar(translatedCharPos);
   }
   
   public char translateBackwards(char c) {
-    int charPos = alphabet.charToPosition(c);
-    int translatedCharPos = ((array.search(map, charPos) - position
+    int charPos = Alphabet.charToPosition(c);
+    int translatedCharPos = ((Array.search(map, charPos) - position
             + ALPHABET_LENGTH) % ALPHABET_LENGTH);
     incrementPosition();
-    return alphabet.positionToChar(translatedCharPos);
+    return Alphabet.positionToChar(translatedCharPos);
   }
 }

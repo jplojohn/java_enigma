@@ -53,7 +53,7 @@ class Main {
   /*
    * This program iterates through the provided filenames, passing them off
    * to the parseFile() function and storing the result in the appropriate
-   * array.
+   * Array.
    */
   private static void parseFiles() throws IOException {
     rotorMaps = new int[rotorFiles.length][];
@@ -70,7 +70,7 @@ class Main {
   
   /*
    * This function takes a file name and attempts to read a rotor or plugboard
-   * mapping into an array out of it. Examples of mappings may be seen in the
+   * mapping into an Array out of it. Examples of mappings may be seen in the
    * RotorTests.java file in the test package.
    */
   private static int[] parseFile(String fileName) throws IOException {

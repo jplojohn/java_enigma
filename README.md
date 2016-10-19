@@ -9,17 +9,9 @@ program as it is not required (and has no part in the cryptographic process).
 
 ## Requirements
 
-* JUnit (<http://junit.org/junit4/>)
-* Hamcrest (<http://hamcrest.org/JavaHamcrest/>)
-* Apache Commons Lang (<https://commons.apache.org/proper/commons-lang/>)
-* Java JRE 7+ (<https://java.com/en/>)
-
-This program has been tested with the following versions:
-* JUnit 4.12
-* Oracle Java 7, 8
-* Apache Commons Lang 3.5
-
-It may work with Java 5 or 6, but has not been tested with them.
+This program has been tested with Java 8, but should work with Java 6+.
+If you want to run the test suite, they were written with JUnit 4, but JUnit 3+,
+with the latest version of Hamcrest for the Matchers in the Test Suite.
 
 ## Usage
 ###Introduction
@@ -84,6 +76,10 @@ encrypted version into an *identically* configured enigma machine.
 Remember also that the configuration of the machine includes the
 position of the rotors, which will change with every valid character
 entered.
+
+## Building
+Build everything under `/src` for the base program. You may also wish to compile
+and run the unit `testsuite`, which is under /test.
 
 ## Copyright
 

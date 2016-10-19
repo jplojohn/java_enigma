@@ -1,5 +1,3 @@
-package test;
-
 import main.Rotor;
 import org.junit.Test;
 

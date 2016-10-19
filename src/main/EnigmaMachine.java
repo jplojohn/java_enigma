@@ -22,7 +22,7 @@ class EnigmaMachine {
           "corresponds to the letter 'A', 1 to the letter 'B', and 25 to the" +
           "letter 'Z'. For example:\n" +
           "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 0\n" +
-          "represents a mapping up one place in the alphabet. With the rotor in\n" +
+          "represents a mapping up one place in the Alphabet. With the rotor in\n" +
           "the initial position, an 'A' will be mapped to 'B', a 'B' to 'C',\n" +
           "and 'Z' to 'A'.\n" +
           "Remember, this mapping will not hold after the first translation as\n" +

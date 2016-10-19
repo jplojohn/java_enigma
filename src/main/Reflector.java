@@ -1,11 +1,11 @@
 package main;
 
-import util.alphabet;
+import util.Alphabet;
 
 public class Reflector {
   public static char reflect(char c) {
-    int i = alphabet.charToPosition(c);
+    int i = Alphabet.charToPosition(c);
     int res = (i + 13) % 26;
-    return alphabet.positionToChar(res);
+    return Alphabet.positionToChar(res);
   }
 }
