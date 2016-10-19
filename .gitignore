@@ -3,6 +3,16 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# IntelliJ IDEA files
+/.idea
+*.iml
+java_enigma.xml
+java_enigma.properties
+
+# Executables
+/out
+/bin
+
 # Package Files #
 *.jar
 *.war
